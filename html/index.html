@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="../dist/css/style.css">
    
     <style>
+
+
+ 
+
         .card {
             background-color: #f8f1e4; /* Ivory color */
         }
@@ -47,6 +51,120 @@
             height: 100%;
         }
 
+        /*seccion del slider*/
+        
+        .titulo_de_apartado_de_reseñas{
+            text-align: center;
+            font-size: calc(1.46875rem + 2.625vw);
+            margin: 40px 0px;
+            font-weight: 600;
+            color: rgba(var(--bs-black-rgb), var(--bs-text-opacity));
+        }
+       
+    .container{
+        margin-bottom: 80px;
+        margin-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    #reseñas::after{
+        position: absolute;
+    content: "";
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    height: 90%;
+    background-size: contain;
+    background-image: url(../assets/images/faq/faq-backlayer-icons.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+    }
+    .slider{
+            width: 100%;
+            height: 700px;
+            overflow: hidden;
+            border-radius: 20px;
+    }
+    .ul_slider{
+                display: flex;
+                width: 300%;
+                height: 100%;
+                animation: slide 15s infinite cubic-bezier(0.25, 0.1, 0.25, 1);
+                margin: 0px;
+                padding: 0;
+                list-style: none;
+        }
+        .lis_del_slider{
+            width: 100%;
+        }
+    .imgs_de_slider{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: bottom;
+    }
+
+    #segunda_img_de_slider{
+        object-position: left bottom;
+    }
+
+   
+    @keyframes slide{
+        0%{margin-left: 0;}
+        33% {margin-left: 0;}
+
+        50%{margin-left: -100%;}
+        71% {margin-left: -100%;}
+
+        86% {margin-left: -200%;}
+        100% {margin-left: -200%;}
+    }
+
+    .instagram-button{
+        width: 40px;
+        height: 40px;
+    }
+    .tiktok-button{
+        width: 40px;
+        height: 40px;
+    }
+
+    .whatsapp-button{
+        width: 40px;
+        height: 40px;
+    }
+
+    /*aqui acaba la seccion slider*/
+
+    /*aqui empiezael arreglo de left-hero-color*/
+
+    @media screen and (max-width: 576px) {
+    .align-items-center{
+        display: flex;
+        flex-direction: column-reverse;
+    ;
+    }
+
+    .left-hero-color{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .left-hero-color p{
+        text-align: center;
+    }
+}
+/*aqui termian el arreglo de left-hero-color*/
+
+@media screen and (min-width: 1200px){
+    .titulo_de_apartado_de_reseñas{
+        font-size: 3.4375rem;
+    }
+}
+    
+
     </style>
 </head>
 <body>
@@ -79,6 +197,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-capitalize" href="#faq">Preguntas Frecuentes</a> <!-- Updated link -->
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-capitalize" href="#reseñas">reseñas</a> <!-- Updated link -->
+                                </li>
                             </ul>
                            
                     </div>
@@ -108,6 +229,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-capitalize" href="#faq">Preguntas Frecuentes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-capitalize" href="#reseñas">reseñas</a> <!-- Updated link -->
                         </li>
                         </ul>
                 </div>
@@ -559,13 +683,18 @@
         <i class="ti ti-brand-whatsapp"></i>
     </a>
 
-    <section>
+    <section id="reseñas">
         <div class="container">
+            <div class="titulo_de_apartado_de_reseñas">
+                <p>
+                    RESEÑAS
+                </p>
+            </div>
             <div class="slider">
-                <ul>
-                    <li><img src="../assets/images/reseñas_imgs/uno.jpg" alt=""></li>
-                    <li><img src="../assets/images/reseñas_imgs/dos.jpg" alt=""></li>
-                    <li><img src="../assets/images/reseñas_imgs/tres.jpg" alt=""></li>
+                <ul class="ul_slider">
+                    <li  class="lis_del_slider" ><img  class ="imgs_de_slider" src="../assets/images/reseñas_imgs/uno.jpg" alt=""></li>
+                    <li  class="lis_del_slider"><img id="segunda_img_de_slider"class ="imgs_de_slider" src="../assets/images/reseñas_imgs/dos.jpg" alt=""></li>
+                    <li  class="lis_del_slider"><img class ="imgs_de_slider" src="../assets/images/reseñas_imgs/tres.jpg" alt=""></li>
                 </ul>
             </div>
         </div>
